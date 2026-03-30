@@ -1,16 +1,26 @@
-# React + Vite
+# GuitarLA - Store & Shopping Cart
+Proyecto desarrollado para demostrar el dominio de React Hooks, manipulación de Estado Global y diseño responsivo con Tailwind CSS.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🧠 Conceptos de JavaScript & React Destacados
+Para este proyecto, me enfoqué en escribir código limpio, declarativo y optimizado, aplicando los siguientes conocimientos:
 
-Currently, two official plugins are available:
+1. Gestión de Estado y Persistencia
+- useState con Lazy Initialization: Implementé una función de inicio para el carrito que consulta el LocalStorage solo en la carga inicial, optimizando el rendimiento.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- useEffect para Sincronización: Utilicé este Hook para automatizar el guardado del carrito en el navegador cada vez que el usuario realiza un cambio.
 
-## React Compiler
+2. Optimización de Rendimiento (Performance)
+- useMemo para Cálculos Derivados:
+a. Total del Carrito: Calculado mediante .reduce(), memorizando el resultado para evitar procesamientos innecesarios en cada render.
+b. Estado del Carrito (isEmpty): Determinado de forma eficiente para condicionar la interfaz de usuario.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+3. Manipulación Avanzada de Arreglos (Inmutabilidad)
+En lugar de modificar el estado original, utilicé técnicas modernas de JS:
 
-## Expanding the ESLint configuration
+- filter: Para eliminar productos de forma precisa mediante su ID.
+- map: Para actualizar cantidades creando copias nuevas de los objetos (Spread Operator {...item}).
+- findIndex: Para lógica de negocio compleja (verificar duplicados antes de agregar al carrito).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+4. Estilizado Profesional con Tailwind CSS
+Manejo de estados visuales dinámicos basados en la lógica de React.
+

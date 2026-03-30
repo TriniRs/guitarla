@@ -4,7 +4,9 @@ export default function Header({cart,removeFromCart, increaseQuantity, decreaseQ
     //State derivado
     const isEmpty = useMemo(() => cart.length === 0, [cart]);
 
-    const cartTotal = useMemo( () => cart.reduce((total, item) => total + (item.price * item.quantity), 0), [cart]);
+    const cartTotal = useMemo( () => cart.reduce((total, item) => total + (item.price * item.quantity), 0), [cart]); 
+    //uso reduce para calcular el total del carrito
+    //uso useMemo para memorizar el resultado del cálculo y solo recalcularlo cuando el carrito cambie, evitando cálculos innecesarios en cada renderizado
     
     return (  
     <header className="py-5 header">
